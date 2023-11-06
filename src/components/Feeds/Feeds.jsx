@@ -5,7 +5,7 @@ import QuestionFeed from "./QuestionFeed";
 import useFeed from "./useFeed";
 
 export default function Feeds() {
-  const [snapshot, reviewStore] = useFeed();
+  const reviewStore = useFeed();
 
   return (
     <FeedsBox>

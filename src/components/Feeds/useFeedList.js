@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useReviewStore from "../../hooks/useReviewStore";
 
 export default function useFeedList({ on }) {

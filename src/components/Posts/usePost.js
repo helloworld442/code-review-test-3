@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import useReviewStore from "../../hooks/useReviewStore";
 
-export default function useFeed() {
+export default function usePost() {
   const [snapshot, reviewStore] = useReviewStore();
 
   useEffect(() => {
