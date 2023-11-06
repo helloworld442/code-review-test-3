@@ -1,4 +1,4 @@
-import { loginUser } from "../apis/auth";
+import { emailCheck, emailSend, loginUser } from "../apis/auth";
 
 export default class AuthStore {
   snapshot = {};
@@ -21,13 +21,43 @@ export default class AuthStore {
     return this.snapshot;
   }
 
-  async postFetchLogin(req) {
+  async postFetchEmail(e, req) {
+    e.preventDefault();
+
+    try {
+      const data = await emailSend({ email: req.email });
+
+      this.snapshot = { emailSuccess: true, emailError: null };
+    } catch (error) {
+      this.snapshot = { emailSuccess: false, emailError: error };
+    }
+
+    this.publish();
+  }
+
+  async postFetchEmailCode(e, req) {
+    e.preventDefault();
+
+    try {
+      const data = await emailCheck({ email: req.email, successKey: req.successKey });
+
+      this.snapshot = { emailCodeSuccess: true, emailCodeError: null };
+    } catch (error) {
+      this.snapshot = { emailCodeSuccess: false, emailCodeError: error };
+    }
+
+    this.publish();
+  }
+
+  async postFetchLogin(e, req) {
+    e.preventDefault();
+
     try {
       const data = await loginUser(req);
 
-      this.snapshot = { data, error: null };
+      this.snapshot = { loginSuccess: true, loginError: null };
     } catch (error) {
-      this.snapshot = { data: null, error };
+      this.snapshot = { loginSuccess: false, loginError: error };
     }
 
     this.publish();

@@ -3,15 +3,18 @@ import { device } from "../../utils/_media";
 import BestFeed from "./BestFeed";
 import QuestionFeed from "./QuestionFeed";
 import useFeed from "./useFeed";
+import CSSTransition from "../@common/CSSTransition";
 
 export default function Feeds() {
   const reviewStore = useFeed();
 
   return (
-    <FeedsBox>
-      <BestFeed />
-      <QuestionFeed />
-    </FeedsBox>
+    <CSSTransition>
+      <FeedsBox>
+        <BestFeed />
+        <QuestionFeed />
+      </FeedsBox>
+    </CSSTransition>
   );
 }
 

@@ -3,22 +3,25 @@ import QuestionPostBanner from "./QuestionPostBanner";
 import usePost from "./usePost";
 import QuestionPostList from "./QuestionPostList";
 import QuestionPostSearch from "./QuestionPostSearch";
+import CSSTransition from "../@common/CSSTransition";
 
 export default function QuestionPost() {
   const reviewStore = usePost();
 
   return (
-    <StQuestionPostSection>
-      <QuestionPostBanner />
+    <CSSTransition>
+      <StQuestionPostSection>
+        <QuestionPostBanner />
 
-      <SectionTitle>답변을 기다리는 글</SectionTitle>
+        <SectionTitle>답변을 기다리는 글</SectionTitle>
 
-      <SectionDesc>답변을 기다리는 게시글들입니다. 처음으로 답변의 주인공이 !!</SectionDesc>
+        <SectionDesc>답변을 기다리는 게시글들입니다. 처음으로 답변의 주인공이 !!</SectionDesc>
 
-      <QuestionPostSearch />
+        <QuestionPostSearch />
 
-      <QuestionPostList />
-    </StQuestionPostSection>
+        <QuestionPostList />
+      </StQuestionPostSection>
+    </CSSTransition>
   );
 }
 

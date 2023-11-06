@@ -11,9 +11,7 @@ const SignInForm = () => {
   const onSubmitField = (e) => {
     e.preventDefault();
 
-    console.log(form);
-
-    authStore.postFetchLogin(form);
+    authStore.postFetchLogin(e, form);
 
     resetForm();
   };

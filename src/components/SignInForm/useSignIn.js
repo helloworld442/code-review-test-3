@@ -4,19 +4,19 @@ import useAuthStore from "../../hooks/useAuthStore";
 export default function useSignIn() {
   const [snapshot, authStore] = useAuthStore();
 
-  const { data, error } = snapshot;
+  const { loginSuccess, loginError } = snapshot;
 
   useEffect(() => {
     //로그인에 성공했을 때 이벤트 로직
-    if (data) {
+    if (loginSuccess) {
       window.location.href = "/";
     }
 
     //로그인에 실페했을 때 이벤트 로직
-    if (error) {
+    if (loginError) {
       alert("로그인에 실패하셨습니다.");
     }
-  }, [data, error]);
+  }, [loginSuccess, loginError]);
 
   return authStore;
 }

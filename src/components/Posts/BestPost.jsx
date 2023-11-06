@@ -3,24 +3,27 @@ import BestPostBanner from "./BestPostBanner";
 import BestPostSearch from "./BestPostSearch";
 import usePost from "./usePost";
 import BestPostList from "./BestPostList";
+import CSSTransition from "../@common/CSSTransition";
 
 export default function BestPost() {
   const reviewStore = usePost();
 
   return (
-    <BestPostSection>
-      <BestPostBanner />
+    <CSSTransition>
+      <BestPostSection>
+        <BestPostBanner />
 
-      <SectionTitle>인기글 검색</SectionTitle>
+        <SectionTitle>인기글 검색</SectionTitle>
 
-      <SectionDesc>
-        태그를 활용한 인기글 검색입니다! 지금 검색을 통해 별무리 회원들의 인기글을 확인해보세요!
-      </SectionDesc>
+        <SectionDesc>
+          태그를 활용한 인기글 검색입니다! 지금 검색을 통해 별무리 회원들의 인기글을 확인해보세요!
+        </SectionDesc>
 
-      <BestPostSearch />
+        <BestPostSearch />
 
-      <BestPostList />
-    </BestPostSection>
+        <BestPostList />
+      </BestPostSection>
+    </CSSTransition>
   );
 }
 
