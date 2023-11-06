@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../utils/_media";
 import QuestionPostBanner from "./QuestionPostBanner";
 import usePost from "./usePost";
 import QuestionPostList from "./QuestionPostList";
@@ -30,6 +31,10 @@ const StQuestionPostSection = styled.section`
   width: 980px;
   height: auto;
   float: right;
+
+  @media ${device.tablet} {
+    width: 100%;
+  }
 `;
 
 const SectionTitle = styled.h3`

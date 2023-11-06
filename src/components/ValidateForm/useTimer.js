@@ -13,7 +13,7 @@ export default function useTimer(snapshot) {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [seconds, snapshot.emailSuccess]);
+  }, [seconds, snapshot.emailSuccess, snapshot.emailCodeSuccess]);
 
   const minutes = Math.floor(seconds / 60)
     .toString()

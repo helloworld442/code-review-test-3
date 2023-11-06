@@ -8,21 +8,21 @@ export default function Category({ index }) {
 
   return (
     <CategoryBox>
-      <Link to="/forem">
+      <a href="/forem">
         <CategoryTitle onClick={() => onClickCategory(0)} $active={category === 0}>
           전체
         </CategoryTitle>
-      </Link>
-      <Link to="/forem/best">
+      </a>
+      <a href="/forem/best">
         <CategoryTitle onClick={() => onClickCategory(1)} $active={category === 1}>
           인기글
         </CategoryTitle>
-      </Link>
-      <Link to="/forem/question">
+      </a>
+      <a href="/forem/question">
         <CategoryTitle onClick={() => onClickCategory(2)} $active={category === 2}>
           답변중
         </CategoryTitle>
-      </Link>
+      </a>
     </CategoryBox>
   );
 }

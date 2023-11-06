@@ -2,40 +2,37 @@ import styled from "styled-components";
 import { device } from "../utils/_media";
 import Header from "../components/@common/Header";
 import Footer from "../components/@common/Footer";
-import { Outlet } from "react-router-dom";
 
-export default function ForemLayout() {
+export default function WriteLayout({ children }) {
   return (
-    <StForemLayout>
+    <StWriteLayout>
       <Header />
-      <ForemMain>
-        <Outlet />
-      </ForemMain>
+      <WriteMain>{children}</WriteMain>
       <Footer />
-    </StForemLayout>
+    </StWriteLayout>
   );
 }
 
-const StForemLayout = styled.div`
+const StWriteLayout = styled.div`
   width: 100%;
   height: auto;
-  background: #fff;
+  background: rgb(252, 252, 253);
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
-const ForemMain = styled.main`
+const WriteMain = styled.main`
   width: 1150px;
   height: auto;
-  margin-top: 80px;
+  margin-top: 100px;
   box-sizing: border-box;
+  display: flex;
+  gap: 64px;
 
   @media ${device.tablet} {
     width: 100%;
     padding: 0 10vw;
-    display: flex;
     flex-direction: column;
-    gap: 24px;
   }
 `;

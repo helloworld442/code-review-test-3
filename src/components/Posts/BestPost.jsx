@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../utils/_media";
 import BestPostBanner from "./BestPostBanner";
 import BestPostSearch from "./BestPostSearch";
 import usePost from "./usePost";
@@ -32,6 +33,10 @@ const BestPostSection = styled.section`
   width: 980px;
   height: auto;
   float: right;
+
+  @media ${device.tablet} {
+    width: 100%;
+  }
 `;
 
 const SectionTitle = styled.h3`
