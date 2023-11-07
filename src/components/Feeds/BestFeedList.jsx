@@ -3,11 +3,17 @@ import { device } from "../../utils/_media";
 import { Pagnation } from "../@common/Pagnation";
 import BestFeedItem from "./BestFeedItem";
 import useFeedList from "./useFeedList";
+import Skeleton from "./BestFeedSkeleton";
 
 export default function BestFeedList() {
   const [items, currPage, setCurrPage] = useFeedList({ on: "best" });
 
-  if (!items) return <div>is Loading</div>;
+  if (!items)
+    return (
+      <StBestFeedList>
+        <Skeleton />
+      </StBestFeedList>
+    );
 
   return (
     <>

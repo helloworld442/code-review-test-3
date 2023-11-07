@@ -3,11 +3,17 @@ import { device } from "../../utils/_media";
 import { Pagnation } from "../@common/Pagnation";
 import QuestionFeedItem from "./QuestionFeedItem";
 import useFeedList from "./useFeedList";
+import Skeleton from "./QuestionFeedSkeleton";
 
 export default function QuestionFeedList() {
   const [items, currPage, setCurrPage] = useFeedList({ on: "question" });
 
-  if (!items) return <div>is Loading</div>;
+  if (!items)
+    return (
+      <StQuestionFeedList>
+        <Skeleton />
+      </StQuestionFeedList>
+    );
 
   return (
     <>
