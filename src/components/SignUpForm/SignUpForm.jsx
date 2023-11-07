@@ -19,9 +19,9 @@ export default function SignUpForm() {
   return (
     <SignUpFormContext.Provider value={{ form, setForm, error, setError }}>
       <SignUpFormSection>
-        <SectionTitle>회원가입</SectionTitle>
-
         <SectionContent>
+          <SectionTitle>회원가입</SectionTitle>
+
           <ValidateForm />
         </SectionContent>
       </SignUpFormSection>
@@ -38,15 +38,15 @@ const SignUpFormSection = styled.section`
 `;
 
 const SectionTitle = styled.h1`
-  padding-top: 30px;
-  padding-bottom: 18px;
+  margin-bottom: 36px;
   font-size: 2.2rem;
   text-align: center;
 `;
 
 const SectionContent = styled.div`
   width: calc(100% - 24vw);
-  padding: 6vw 12vw;
+  padding: 4vw 12vw;
+  margin: 80px 0;
   box-sizing: border-box;
   margin-bottom: 72px;
   border-radius: 0.5rem;

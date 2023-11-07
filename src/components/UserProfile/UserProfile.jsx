@@ -58,7 +58,7 @@ const ContentProfile = styled.div`
     height: 6.2rem;
     padding: 8px;
     border-radius: 50%;
-    fill: rgb(64, 58, 107, 0.8);
+    fill: rgb(64, 58, 107, 1);
     background: rgb(253, 253, 252);
   }
 
