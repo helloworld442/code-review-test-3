@@ -11,7 +11,7 @@ const SignInForm = () => {
   const onSubmitField = (e) => {
     e.preventDefault();
 
-    authStore.postFetchLogin(e, form);
+    authStore.postFetchLogin(form);
 
     resetForm();
   };
@@ -58,15 +58,6 @@ const SignInForm = () => {
     </StSignIn>
   );
 };
-
-const StSignIn = styled.form`
-  width: 100%;
-  margin-top: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f0f1f5;
-`;
 
 const SignInContent = styled.div`
   width: calc(100% - 64vw);

@@ -21,11 +21,9 @@ export default class AuthStore {
     return this.snapshot;
   }
 
-  async postFetchEmail(e, req) {
-    e.preventDefault();
-
+  async postFetchEmail(req) {
     try {
-      const data = await emailSend({ email: req.email });
+      const data = await emailSend(req);
 
       this.snapshot = { emailSuccess: true, emailError: null };
     } catch (error) {
@@ -35,11 +33,9 @@ export default class AuthStore {
     this.publish();
   }
 
-  async postFetchEmailCode(e, req) {
-    e.preventDefault();
-
+  async postFetchEmailCode(req) {
     try {
-      const data = await emailCheck({ email: req.email, successKey: req.successKey });
+      const data = await emailCheck(req);
 
       this.snapshot = { emailCodeSuccess: true, emailCodeError: null };
     } catch (error) {
@@ -49,9 +45,7 @@ export default class AuthStore {
     this.publish();
   }
 
-  async postFetchLogin(e, req) {
-    e.preventDefault();
-
+  async postFetchLogin(req) {
     try {
       const data = await loginUser(req);
 

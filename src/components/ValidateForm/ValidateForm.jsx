@@ -11,11 +11,27 @@ export default function ValidateForm() {
 
   const { emailSuccess, emailError, emailCodeSuccess, emailCodeError } = snapshot;
 
+  const onSubmitEmail = (e) => {
+    e.preventDefault();
+
+    const emailForm = { email: form.email };
+
+    authStore.postFetchEmail(emailForm);
+  };
+
+  const onSubmitEmailCode = (e) => {
+    e.preventDefault();
+
+    const emailCodeForm = { email: form.email, successKey: form.successKey };
+
+    authStore.postFetchEmailCode(emailCodeForm);
+  };
+
   return (
     <ValidateFormSection>
       <SectionTitle>이메일 인증</SectionTitle>
 
-      <form onSubmit={(e) => authStore.postFetchEmail(e, form)}>
+      <form onSubmit={onSubmitEmail}>
         <FormInputBox>
           <FormInputLabel>
             이메일 <span>*</span>
@@ -33,7 +49,7 @@ export default function ValidateForm() {
         </FormInputBox>
       </form>
 
-      <form onSubmit={(e) => authStore.postFetchEmailCode(e, form)}>
+      <form onSubmit={onSubmitEmailCode}>
         <FormInputBox>
           <FormInputLabel>
             이메일 인증 <span>*</span>
