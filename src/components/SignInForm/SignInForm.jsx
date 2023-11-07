@@ -8,10 +8,10 @@ const SignInForm = () => {
   const authStore = useSignIn();
   const [form, onChange, resetForm] = useInput({ email: "", password: "" });
 
-  const onSubmitField = (e) => {
+  const onSubmitField = async (e) => {
     e.preventDefault();
 
-    authStore.postFetchLogin(form);
+    await authStore.postFetchLogin(form);
 
     resetForm();
   };
