@@ -81,6 +81,7 @@ const ContentMenu = styled.ul`
   padding: 36px 12px;
   padding-bottom: 4px;
   margin: 12px;
+  margin-right: 0;
   margin-bottom: 0;
   box-sizing: border-box;
   border-left: 1px solid #e1e3e7;
