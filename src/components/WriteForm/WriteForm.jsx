@@ -1,21 +1,66 @@
 import styled from "styled-components";
+import { device } from "../../utils/_media";
 import { Button } from "../@common/Button";
 import WriteFormInput from "./WriteFormInput";
 import WriteFormCode from "./WriteFormCode";
-import useWriteForm from "./useWriteForm";
 import WriteFormTextArea from "./WriteFormTextArea";
-import { device } from "../../utils/_media";
+import useReviewStore from "../../hooks/useReviewStore";
+import { useState } from "react";
 
 export default function WriteForm() {
-  const [form, error, onChange, onSubmit, onRefresh] = useWriteForm();
+  const [form, setForm] = useState({
+    title: "",
+    problem: "",
+    question: "",
+    category: [],
+    code: "",
+  });
+  const [error, setError] = useState({ title: "", code: "" });
+  const [snapshot, reviewStore] = useReviewStore();
+
+  const validateTitle = (title) => {
+    if (title.trim() === "") return "제목을 입력해주세요";
+    return "";
+  };
+
+  const validateCode = (code) => {
+    if (code.trim() === "") return "코드를 입력해주세요";
+    return "";
+  };
+
+  const onChangeField = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    setError((prev) => ({ ...prev, [name]: "" }));
+  };
+
+  const onSubmitField = (e) => {
+    e.preventDefault();
+
+    const titleError = validateTitle(form.title);
+    const codeError = validateCode(form.code);
+
+    if (titleError || codeError) {
+      setError({ title: titleError, code: codeError });
+      return;
+    }
+
+    reviewStore.postFetchData(form);
+  };
+
+  const onRefreshField = (e) => {
+    e.preventDefault();
+
+    window.location.reload();
+  };
 
   return (
-    <StWriteForm onSubmit={onSubmit}>
+    <StWriteForm onSubmit={onSubmitField}>
       <WriteFormInput
         name="title"
         value={form.title}
         error={error.title}
-        onChange={onChange}
+        onChange={onChangeField}
         label="제목을 입력해주세요"
       />
 
@@ -23,28 +68,26 @@ export default function WriteForm() {
         name="code"
         value={form.code}
         error={error.code}
-        onChange={onChange}
+        onChange={onChangeField}
         label="코드를 입력해주세요"
       />
 
       <WriteFormTextArea
-        name="preKnow"
-        value={form.preKnow}
-        error={error.preKnow}
-        onChange={onChange}
+        name="problem"
+        value={form.problem}
+        onChange={onChangeField}
         label="사전지식을 입력해주세요"
       />
 
       <WriteFormTextArea
-        name="purpose"
-        value={form.purpose}
-        error={error.purpose}
-        onChange={onChange}
+        name="question"
+        value={form.question}
+        onChange={onChangeField}
         label="목적을 입력해주세요"
       />
 
       <WriteFormButtons>
-        <Button size="medium" onClick={onRefresh}>
+        <Button size="medium" onClick={onRefreshField}>
           취소
         </Button>
         <Button size="medium" primary="true" type="submit">
