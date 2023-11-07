@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { device } from "../../utils/_media";
 
 export default function Skeleton() {
   return (
@@ -88,6 +89,10 @@ const QuestionPostSkeletonDesc = styled.h5`
   height: 36px;
   margin-bottom: 24px;
   animation: ${blinkAnimation} 1.5s linear infinite;
+
+  @media ${device.tablet} {
+    width: 400px;
+  }
 `;
 
 const QuestionPostSkeletonUser = styled.div`
