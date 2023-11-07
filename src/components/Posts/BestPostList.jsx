@@ -1,12 +1,18 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { device } from "../../utils/_media";
 import BestPostItem from "./BestPostItem";
 import usePostList from "./usePostList";
+import Skeleton from "./BestPostSkeleton";
 
 export default function BestPostList() {
   const items = usePostList({ on: "best" });
 
-  if (!items) return <div>is Loading</div>;
+  if (!items)
+    return (
+      <StBestPostList $skeleton="true">
+        <Skeleton />
+      </StBestPostList>
+    );
 
   return (
     <StBestPostList>
@@ -27,4 +33,10 @@ const StBestPostList = styled.ul`
   @media ${device.tablet} {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  ${(props) =>
+    props.$skeleton &&
+    css`
+      grid-gap: 24px;
+    `}
 `;

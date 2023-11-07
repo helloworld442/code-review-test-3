@@ -1,11 +1,17 @@
 import styled from "styled-components";
 import QuestionPostItem from "./QuestionPostItem";
 import usePostList from "./usePostList";
+import Skeleton from "./QuestionPostSkeleton";
 
 export default function QuestionPostList() {
   const items = usePostList({ on: "question" });
 
-  if (!items) return <div>is Loaindg</div>;
+  if (!items)
+    return (
+      <StQuestionPostList>
+        <Skeleton />
+      </StQuestionPostList>
+    );
 
   return (
     <StQuestionPostList>
