@@ -108,6 +108,6 @@ const BestFeedSkeletonInfo = styled.div`
   bottom: 26px;
   right: 14px;
   width: 100px;
-  height: 36px;
+  height: 24px;
   animation: ${blinkAnimation} 1.5s linear infinite;
 `;
