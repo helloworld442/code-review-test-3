@@ -12,7 +12,7 @@ export default function WriteForm() {
     title: "",
     problem: "",
     question: "",
-    category: [],
+    category: ["Java", "JavaScript"],
     code: "",
   });
   const [error, setError] = useState({ title: "", code: "" });
