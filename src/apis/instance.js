@@ -11,7 +11,7 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   (config) => {
-    console.log("[DEBUG] request: " + config);
+    console.log(config);
     return config;
   },
   (error) => {

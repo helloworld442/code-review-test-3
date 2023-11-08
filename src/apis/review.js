@@ -11,6 +11,7 @@ const getReviewById = async (req) => {
 };
 
 const postReviews = async (req) => {
+  console.log(req);
   const response = await api.post("/api/codeReview", req);
   return response.data;
 };
