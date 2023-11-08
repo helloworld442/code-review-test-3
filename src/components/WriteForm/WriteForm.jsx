@@ -76,14 +76,14 @@ export default function WriteForm() {
         name="problem"
         value={form.problem}
         onChange={onChangeField}
-        label="사전지식을 입력해주세요"
+        label="문제상황을 입력해주세요"
       />
 
       <WriteFormTextArea
         name="question"
         value={form.question}
         onChange={onChangeField}
-        label="목적을 입력해주세요"
+        label="궁금한점을 입력해주세요"
       />
 
       <WriteFormButtons>
