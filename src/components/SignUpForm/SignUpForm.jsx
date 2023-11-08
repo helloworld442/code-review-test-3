@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { device } from "../../utils/_media";
-import ValidateForm from "../ValidateForm/ValidateForm";
 import { createContext, useState } from "react";
+import EmailForm from "../EmailForm/EmailForm";
+import EmailCodeForm from "../EmailCodeForm/EmailCodeForm";
 
 export const SignUpFormContext = createContext(null);
 
@@ -22,7 +23,13 @@ export default function SignUpForm() {
         <SectionContent>
           <SectionTitle>회원가입</SectionTitle>
 
-          <ValidateForm />
+          <ValidateFormSection>
+            <FormSectionTitle>이메일 인증</FormSectionTitle>
+
+            <EmailForm />
+
+            <EmailCodeForm />
+          </ValidateFormSection>
         </SectionContent>
       </SignUpFormSection>
     </SignUpFormContext.Provider>
@@ -56,4 +63,16 @@ const SectionContent = styled.div`
     width: calc(100% - 12vw);
     padding: 6vw;
   }
+`;
+
+const ValidateFormSection = styled.section`
+  margin-bottom: 30px;
+`;
+
+const FormSectionTitle = styled.h3`
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
 `;
