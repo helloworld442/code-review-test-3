@@ -18,8 +18,6 @@ export default function WriteForm() {
   const [error, setError] = useState({ title: "", code: "" });
   const [snapshot, reviewStore] = useReviewStore();
 
-  const { postSuccess, postError } = snapshot;
-
   const validateTitle = (title) => {
     if (title.trim() === "") return "제목을 입력해주세요";
     return "";
@@ -56,8 +54,11 @@ export default function WriteForm() {
     window.location.reload();
   };
 
-  if (postSuccess) {
+  if (snapshot.postSuccess) {
     window.location.href = "/";
+  }
+
+  if (snapshot.postError) {
   }
 
   return (

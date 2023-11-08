@@ -16,6 +16,13 @@ const SignInForm = () => {
     resetForm();
   };
 
+  if (snapshot.loginSuccess) {
+    window.location.href = "/";
+  }
+
+  if (snapshot.loginError) {
+  }
+
   return (
     <StSignIn onSubmit={onSubmitField}>
       <SignInContent>
