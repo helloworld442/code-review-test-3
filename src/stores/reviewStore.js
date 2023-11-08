@@ -38,11 +38,15 @@ export default class ReviewStore {
   }
 
   async postFetchData(req) {
-    const data = await postReviews(req);
+    try {
+      const data = await postReviews(req);
 
-    window.location.href = "/";
+      this.snapshot = { postSuccess: true, postError: null };
+    } catch (error) {
+      this.snapshot = { postSuccess: false, postError: error };
+    }
 
-    this.resetFetchData();
+    this.publish();
   }
 
   resetFetchData() {

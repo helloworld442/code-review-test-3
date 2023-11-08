@@ -12,11 +12,13 @@ export default function WriteForm() {
     title: "",
     problem: "",
     question: "",
-    category: "Java,Javascript",
+    category: ["Java", "JavaScript"],
     code: "",
   });
   const [error, setError] = useState({ title: "", code: "" });
   const [snapshot, reviewStore] = useReviewStore();
+
+  const { postSuccess, postError } = snapshot;
 
   const validateTitle = (title) => {
     if (title.trim() === "") return "제목을 입력해주세요";
@@ -53,6 +55,10 @@ export default function WriteForm() {
 
     window.location.reload();
   };
+
+  if (postSuccess) {
+    window.location.href = "/";
+  }
 
   return (
     <StWriteForm onSubmit={onSubmitField}>

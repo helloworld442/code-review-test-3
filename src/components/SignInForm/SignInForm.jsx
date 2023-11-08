@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { device } from "../../utils/_media";
 import { Button } from "../@common/Button";
 import useInput from "./useInput";
-import useSignIn from "./useSignIn";
+import useAuthStore from "../../hooks/useAuthStore";
 
 const SignInForm = () => {
-  const authStore = useSignIn();
+  const [snapshot, authStore] = useAuthStore();
   const [form, onChange, resetForm] = useInput({ email: "", password: "" });
 
   const onSubmitField = (e) => {
@@ -15,6 +15,12 @@ const SignInForm = () => {
 
     resetForm();
   };
+
+  if (snapshot.loginSuccess) {
+  }
+
+  if (snapshot.loginError) {
+  }
 
   return (
     <StSignIn onSubmit={onSubmitField}>
