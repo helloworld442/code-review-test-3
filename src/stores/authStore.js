@@ -49,10 +49,22 @@ export default class AuthStore {
     try {
       const data = await loginUser(req);
 
-      this.snapshot = { loginSuccess: true, loginError: null };
+      this.resetFetchData();
+
+      window.location.href = "/";
     } catch (error) {
-      this.snapshot = { loginSuccess: false, loginError: error };
+      this.setFetchError({ key: "loginError", value: error });
     }
+  }
+
+  resetFetchData() {
+    this.snapshot = {};
+
+    this.publish();
+  }
+
+  setFetchError({ key, value }) {
+    this.snapshot = { [key]: value };
 
     this.publish();
   }

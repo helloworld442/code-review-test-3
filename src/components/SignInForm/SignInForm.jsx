@@ -16,12 +16,6 @@ const SignInForm = () => {
     resetForm();
   };
 
-  if (snapshot.loginSuccess) {
-  }
-
-  if (snapshot.loginError) {
-  }
-
   return (
     <StSignIn onSubmit={onSubmitField}>
       <SignInContent>
