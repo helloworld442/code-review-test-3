@@ -66,7 +66,7 @@ const QuestionPostSkeletonStatus = styled.div`
   margin-right: 14px;
   box-sizing: border-box;
   width: 80px;
-  height: 36px;
+  height: 30px;
   animation: ${blinkAnimation} 1.5s linear infinite;
 `;
 
@@ -79,7 +79,7 @@ const QuestionPostSkeletonTitle = styled.h3`
 
   h3 {
     width: 300px;
-    height: 36px;
+    height: 30px;
     animation: ${blinkAnimation} 1.5s linear infinite;
   }
 `;
