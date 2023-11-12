@@ -105,6 +105,7 @@ const FormInputButton = styled.button`
 `;
 
 const FormTimer = styled.span`
+  width: 50px;
   padding: 16px 12px;
   margin: 0 24px;
   border: none;
@@ -115,6 +116,7 @@ const FormTimer = styled.span`
   color: rgb(254, 254, 254);
   background: rgb(194, 200, 214);
   cursor: not-allowed;
+  text-align: center;
 
   @media (${device.tablet}) {
     font-size: 0.825rem;

@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 export default function useTimer(snapshot) {
   const [seconds, setSeconds] = useState(300);
 
+  const { emailSuccess, emailCodeSuccess } = snapshot;
+
   useEffect(() => {
     const timer = setInterval(() => {
-      if (seconds > 0 && snapshot.emailSuccess && !snapshot.emailCodeSuccess) {
+      if (seconds > 0 && emailSuccess && !emailCodeSuccess) {
         setSeconds(seconds - 1);
       } else {
         clearInterval(timer);
@@ -13,7 +15,7 @@ export default function useTimer(snapshot) {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [seconds, snapshot.emailSuccess, snapshot.emailCodeSuccess]);
+  }, [seconds, emailSuccess, emailCodeSuccess]);
 
   const minutes = Math.floor(seconds / 60)
     .toString()
