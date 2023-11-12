@@ -1,6 +1,5 @@
 import { css, styled } from "styled-components";
 import { device } from "../../utils/_media";
-import { Link } from "react-router-dom";
 import useCategory from "./useCategory";
 
 export default function Category({ index }) {

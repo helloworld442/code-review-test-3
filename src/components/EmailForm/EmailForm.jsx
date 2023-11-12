@@ -6,7 +6,7 @@ export default function EmailForm() {
   const [form, onChange] = useInput();
   const [snapshot, authStore] = useAuthStore();
 
-  const { emailSuccess, emailError } = snapshot;
+  const { emailSuccess, emailCodeSuccess, emailError } = snapshot;
 
   const onSubmitEmail = (e) => {
     e.preventDefault();
@@ -27,11 +27,11 @@ export default function EmailForm() {
           type="email"
           name="email"
           onChange={onChange}
-          disabled={emailSuccess}
+          disabled={emailSuccess || emailCodeSuccess}
           placeholder="이메일을 입력하세요"
         />
 
-        <FormInputButton disabled={emailSuccess}>인증받기</FormInputButton>
+        <FormInputButton disabled={emailSuccess || emailCodeSuccess}>인증받기</FormInputButton>
       </FormInputBox>
     </form>
   );

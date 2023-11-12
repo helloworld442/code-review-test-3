@@ -22,7 +22,7 @@ function QuestionPostSkeleton() {
       <QuestionPostSkeletonTitle>
         <QuestionPostSkeletonStatus />
 
-        <h3 />
+        <span />
       </QuestionPostSkeletonTitle>
 
       <QuestionPostSkeletonDesc />
@@ -77,7 +77,7 @@ const QuestionPostSkeletonTitle = styled.h3`
   align-items: center;
   gap: 12px;
 
-  h3 {
+  span {
     width: 300px;
     height: 30px;
     animation: ${blinkAnimation} 1.5s linear infinite;

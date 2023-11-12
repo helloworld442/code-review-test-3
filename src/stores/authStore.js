@@ -29,7 +29,6 @@ export default class AuthStore {
     } catch (error) {
       this.snapshot = { emailSuccess: false, emailError: error };
     }
-
     this.publish();
   }
 
@@ -37,9 +36,9 @@ export default class AuthStore {
     try {
       const data = await emailCheck(req);
 
-      this.snapshot = { emailSuccess: true, emailCodeSuccess: true, emailCodeError: null };
+      this.snapshot = { emailCodeSuccess: true, emailCodeError: null };
     } catch (error) {
-      this.snapshot = { emailSuccess: true, emailCodeSuccess: false, emailCodeError: error };
+      this.snapshot = { emailCodeSuccess: false, emailCodeError: error };
     }
 
     this.publish();
