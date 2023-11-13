@@ -1,7 +1,7 @@
 import api from "./instance";
 
 const getReviews = async () => {
-  const response = await api.get("/reviews");
+  const response = await api.get("/api/codeReview");
   return response.data;
 };
 
