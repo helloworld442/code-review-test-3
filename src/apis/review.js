@@ -2,6 +2,7 @@ import api from "./instance";
 
 const getReviews = async () => {
   const response = await api.get("/api/codeReview");
+  console.log(response.data);
   return response.data;
 };
 
