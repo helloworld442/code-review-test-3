@@ -34,7 +34,7 @@ export default function EmailCodeForm() {
           placeholder="인증코드를 입력하세요"
         />
 
-        <FormTimer $active={seconds || emailSuccess} $disabled={!seconds || emailCodeSuccess}>
+        <FormTimer $active={emailSuccess} $disabled={!seconds || emailCodeSuccess}>
           {minutes} : {remainingSeconds}
         </FormTimer>
 
