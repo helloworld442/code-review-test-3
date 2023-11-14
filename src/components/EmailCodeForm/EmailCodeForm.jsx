@@ -7,7 +7,7 @@ import useTimer from "./useTimer";
 export default function EmailCodeForm() {
   const [form, onChange] = useInput();
   const [snapshot, authStore] = useAuthStore();
-  const [minutes, remainingSeconds] = useTimer(snapshot);
+  const [seconds, eminutes, remainingSeconds] = useTimer(snapshot);
 
   const { emailSuccess, emailCodeSuccess, emailCodeError } = snapshot;
 
@@ -34,11 +34,13 @@ export default function EmailCodeForm() {
           placeholder="인증코드를 입력하세요"
         />
 
-        <FormTimer $active={emailSuccess} $disabled={emailCodeSuccess}>
+        <FormTimer $active={seconds || emailSuccess} $disabled={!seconds || emailCodeSuccess}>
           {minutes} : {remainingSeconds}
         </FormTimer>
 
-        <FormInputButton disabled={!emailSuccess || emailCodeSuccess}>인증하기</FormInputButton>
+        <FormInputButton disabled={!seconds || !emailSuccess || emailCodeSuccess}>
+          인증하기
+        </FormInputButton>
       </FormInputBox>
     </form>
   );

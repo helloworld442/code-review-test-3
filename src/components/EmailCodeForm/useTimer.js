@@ -25,5 +25,5 @@ export default function useTimer(snapshot) {
     .toString()
     .padStart(2, "0");
 
-  return [minutes, remainingSeconds];
+  return [seconds, minutes, remainingSeconds];
 }
