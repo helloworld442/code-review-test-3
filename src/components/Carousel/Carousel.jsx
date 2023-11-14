@@ -115,10 +115,10 @@ const CarouselItem = styled.li`
       }
 
       .item-sub-title {
-        font-size: 1rem;
+        font-size: 0.925rem;
         font-weight: 650;
         font-family: sans-serif;
-        line-height: 2rem;
+        line-height: 1.5rem;
         color: #333;
       }
     }

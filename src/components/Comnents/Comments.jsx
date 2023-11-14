@@ -39,6 +39,8 @@ export default function Comments() {
           <Comment />
 
           <Comment />
+
+          <Comment />
         </ContentMenu>
       </SectionContent>
     </CommentsSection>
