@@ -7,7 +7,7 @@ import useTimer from "./useTimer";
 export default function EmailCodeForm() {
   const [form, onChange] = useInput();
   const [snapshot, authStore] = useAuthStore();
-  const [seconds, eminutes, remainingSeconds] = useTimer(snapshot);
+  const [seconds, minutes, remainingSeconds] = useTimer(snapshot);
 
   const { emailSuccess, emailCodeSuccess, emailCodeError } = snapshot;
 
