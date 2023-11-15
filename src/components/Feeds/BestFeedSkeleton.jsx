@@ -1,15 +1,16 @@
 import styled, { keyframes } from "styled-components";
+import { StBestFeedList } from "./BestFeedList";
 
 export default function Skeleton() {
   return (
-    <>
+    <StBestFeedList>
       <BestFeedSkeleton />
       <BestFeedSkeleton />
       <BestFeedSkeleton />
       <BestFeedSkeleton />
       <BestFeedSkeleton />
       <BestFeedSkeleton />
-    </>
+    </StBestFeedList>
   );
 }
 

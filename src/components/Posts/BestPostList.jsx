@@ -7,12 +7,7 @@ import Skeleton from "./BestPostSkeleton";
 export default function BestPostList() {
   const items = usePostList({ on: "best" });
 
-  if (!items)
-    return (
-      <StBestPostList $skeleton="true">
-        <Skeleton />
-      </StBestPostList>
-    );
+  if (!items) return <Skeleton />;
 
   return (
     <StBestPostList>
@@ -23,7 +18,7 @@ export default function BestPostList() {
   );
 }
 
-const StBestPostList = styled.ul`
+export const StBestPostList = styled.ul`
   position: relative;
   padding-top: 64px;
   margin: 24px 0;

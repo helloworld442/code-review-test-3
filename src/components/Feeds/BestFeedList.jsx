@@ -4,16 +4,12 @@ import { Pagnation } from "../@common/Pagnation";
 import BestFeedItem from "./BestFeedItem";
 import useFeedList from "./useFeedList";
 import Skeleton from "./BestFeedSkeleton";
+import { Suspense } from "react";
 
 export default function BestFeedList() {
   const [items, currPage, setCurrPage] = useFeedList({ on: "best" });
 
-  if (!items)
-    return (
-      <StBestFeedList>
-        <Skeleton />
-      </StBestFeedList>
-    );
+  if (!items) return <Skeleton />;
 
   return (
     <>
@@ -33,7 +29,7 @@ export default function BestFeedList() {
   );
 }
 
-const StBestFeedList = styled.ul`
+export const StBestFeedList = styled.ul`
   margin-bottom: 36px;
   display: grid;
   grid-template-rows: repeat(2, 1fr);

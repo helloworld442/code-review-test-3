@@ -1,8 +1,9 @@
 import styled, { keyframes } from "styled-components";
+import { StBestPostList } from "./BestPostList";
 
 export default function Skeleton() {
   return (
-    <>
+    <StBestPostList>
       <BestPostSkeleton />
       <BestPostSkeleton />
       <BestPostSkeleton />
@@ -11,7 +12,7 @@ export default function Skeleton() {
       <BestPostSkeleton />
       <BestPostSkeleton />
       <BestPostSkeleton />
-    </>
+    </StBestPostList>
   );
 }
 

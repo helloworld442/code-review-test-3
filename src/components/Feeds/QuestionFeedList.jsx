@@ -8,12 +8,7 @@ import Skeleton from "./QuestionFeedSkeleton";
 export default function QuestionFeedList() {
   const [items, currPage, setCurrPage] = useFeedList({ on: "question" });
 
-  if (!items)
-    return (
-      <StQuestionFeedList>
-        <Skeleton />
-      </StQuestionFeedList>
-    );
+  if (!items) return <Skeleton />;
 
   return (
     <>
@@ -33,7 +28,7 @@ export default function QuestionFeedList() {
   );
 }
 
-const StQuestionFeedList = styled.div`
+export const StQuestionFeedList = styled.div`
   margin-bottom: 36px;
   display: grid;
   grid-template-rows: repeat(2, 1fr);

@@ -14,7 +14,10 @@ export default function EmailCodeForm() {
   const onSubmitEmailCode = (e) => {
     e.preventDefault();
 
-    const emailCodeForm = { email: form.email, successKey: form.successKey };
+    const emailCodeForm = {
+      email: form.email,
+      successKey: form.successKey,
+    };
 
     authStore.postFetchEmailCode(emailCodeForm);
   };

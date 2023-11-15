@@ -1,15 +1,16 @@
 import styled, { keyframes } from "styled-components";
+import { StQuestionFeedList } from "./QuestionFeedList";
 
 export default function Skeleton() {
   return (
-    <>
+    <StQuestionFeedList>
       <QuestionFeedSkeleton />
       <QuestionFeedSkeleton />
       <QuestionFeedSkeleton />
       <QuestionFeedSkeleton />
       <QuestionFeedSkeleton />
       <QuestionFeedSkeleton />
-    </>
+    </StQuestionFeedList>
   );
 }
 

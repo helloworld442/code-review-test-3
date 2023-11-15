@@ -1,9 +1,10 @@
 import styled, { keyframes } from "styled-components";
 import { device } from "../../utils/_media";
+import { StQuestionPostList } from "./QuestionPostList";
 
 export default function Skeleton() {
   return (
-    <>
+    <StQuestionPostList>
       <QuestionPostSkeleton />
       <QuestionPostSkeleton />
       <QuestionPostSkeleton />
@@ -12,7 +13,7 @@ export default function Skeleton() {
       <QuestionPostSkeleton />
       <QuestionPostSkeleton />
       <QuestionPostSkeleton />
-    </>
+    </StQuestionPostList>
   );
 }
 

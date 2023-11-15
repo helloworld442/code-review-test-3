@@ -6,12 +6,7 @@ import Skeleton from "./QuestionPostSkeleton";
 export default function QuestionPostList() {
   const items = usePostList({ on: "question" });
 
-  if (!items)
-    return (
-      <StQuestionPostList>
-        <Skeleton />
-      </StQuestionPostList>
-    );
+  if (!items) return <Skeleton />;
 
   return (
     <StQuestionPostList>
@@ -22,7 +17,7 @@ export default function QuestionPostList() {
   );
 }
 
-const StQuestionPostList = styled.ul`
+export const StQuestionPostList = styled.ul`
   position: relative;
   padding-top: 64px;
   margin: 24px 0;
