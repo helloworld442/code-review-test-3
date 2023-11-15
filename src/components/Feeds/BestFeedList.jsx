@@ -4,7 +4,6 @@ import { Pagnation } from "../@common/Pagnation";
 import BestFeedItem from "./BestFeedItem";
 import useFeedList from "./useFeedList";
 import Skeleton from "./BestFeedSkeleton";
-import { Suspense } from "react";
 
 export default function BestFeedList() {
   const [items, currPage, setCurrPage] = useFeedList({ on: "best" });

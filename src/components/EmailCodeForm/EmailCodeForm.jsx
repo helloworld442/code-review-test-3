@@ -33,7 +33,7 @@ export default function EmailCodeForm() {
           type="text"
           name="successKey"
           onChange={onChange}
-          disabled={emailCodeSuccess}
+          disabled={!seconds || emailCodeSuccess}
           placeholder="인증코드를 입력하세요"
         />
 
