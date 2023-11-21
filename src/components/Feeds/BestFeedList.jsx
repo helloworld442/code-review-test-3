@@ -10,6 +10,8 @@ export default function BestFeedList() {
 
   if (!items) return <Skeleton />;
 
+  console.log(items);
+
   return (
     <>
       <StBestFeedList>
