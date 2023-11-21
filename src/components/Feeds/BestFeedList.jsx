@@ -10,12 +10,10 @@ export default function BestFeedList() {
 
   if (!items) return <Skeleton />;
 
-  console.log(items);
-
   return (
     <>
       <StBestFeedList>
-        {items.slice(0, 6).map((item) => (
+        {items.content.slice(0, 6).map((item) => (
           <BestFeedItem review={item} key={item.id} />
         ))}
       </StBestFeedList>

@@ -10,7 +10,7 @@ export default function QuestionPostList() {
 
   return (
     <StQuestionPostList>
-      {items.map((item) => (
+      {items.content.map((item) => (
         <QuestionPostItem review={item} key={item.id} />
       ))}
     </StQuestionPostList>

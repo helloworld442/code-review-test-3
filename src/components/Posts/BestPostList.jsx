@@ -11,7 +11,7 @@ export default function BestPostList() {
 
   return (
     <StBestPostList>
-      {items.map((item, index) => (
+      {items.content.map((item, index) => (
         <BestPostItem review={item} key={item.id} index={index} />
       ))}
     </StBestPostList>

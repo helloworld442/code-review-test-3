@@ -13,7 +13,7 @@ export default function QuestionFeedList() {
   return (
     <>
       <StQuestionFeedList>
-        {items.slice(0, 6).map((item) => (
+        {items.content.slice(0, 6).map((item) => (
           <QuestionFeedItem review={item} key={item.id} />
         ))}
       </StQuestionFeedList>
